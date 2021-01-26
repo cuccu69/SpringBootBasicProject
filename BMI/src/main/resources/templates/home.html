@@ -18,6 +18,7 @@
         body{
             width: 1200px;
             margin: auto;
+            margin-top: 20px;
         }
 
         .container{
@@ -36,18 +37,18 @@
 
     <form action="#" th:action="@{/result}" th:object="${bmiRequest}" method="post"><br><br>
         <div class="field-name"><span>Name: </span></div>
-        <input type="text" th:field="*{name}" placeholder="Name"><br><br>
+        <input type="text" th:field="*{name}" placeholder="Your name"><br><br>
         <div class="field-name"><span>Age: </span></div>
-        <input type="text" th:field="*{age}" placeholder="Age"><br><br>
+        <input type="text" th:field="*{age}" placeholder="Your age"><br><br>
         <div class="field-name"><span>Weight (kg): </span></div>
-        <input type="text" th:field="*{weight}" placeholder="kg"><br><br>
+        <input type="text" th:field="*{weight}" placeholder="Kg"><br><br>
         <div class="field-name"><span>Height (m): </span></div>
         <input type="text" th:field="*{height}" placeholder="m"><br><br>
         <input type="submit">
     </form>
 
     <p><span><b>Result: </b></span><span th:text="${bmi}"></span></p>
-    <div th:if="${bmi} != 0">
+    <div th:if="${bmi} != null">
         <div><img
                 src="https://vinmec-prod.s3.amazonaws.com/images/20190515_023453_074691_chi-so-BMI-phan-loa.max-1800x1800.png">
         </div>

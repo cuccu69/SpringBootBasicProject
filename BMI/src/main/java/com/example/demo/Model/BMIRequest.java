@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BMIRequest {
-    private float height;
-    private float weight;
+    private Float height;
+    private Float weight;
     private String name;
-    private int age;
+    private Integer age;
 }

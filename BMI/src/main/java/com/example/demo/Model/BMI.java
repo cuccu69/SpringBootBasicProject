@@ -12,8 +12,8 @@ import org.springframework.stereotype.Controller;
 @Component
 public class BMI {
     private String name;
-    private int age;
-    private float height;
-    private float weight;
-    private float bmiIndex;
+    private Integer age;
+    private Float height;
+    private Float weight;
+    private Float bmiIndex;
 }
