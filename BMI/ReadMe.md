@@ -6,7 +6,7 @@ Project nhằm mục đích xử lý submit form.
     - 3 phần chính:
         + Controller: xử lý request - 1 file duy nhất
         + Model: Xây dựng BMI làm model chính và BMIRequest để nhận thông tin từ form
-        + Service: xử lý tính toán BMI index;
+        + Service: tính toán BMI index;
     - View: xây dựng 1 view duy nhất là home.html ở folder templates
     
 2. Chi tiết project 
@@ -22,7 +22,7 @@ Project để mặc định chạy ở http://localhost:8080. Sau khi tiếp nh�
     2.2. Submit form
     - Controller biding dữ liệu với BMIRequest và xử lý truyển dữ liệu vào một BMI. 
     - Gọi BMIServiceImpl tính toán bmiIndex và trả về model BMI hoàn chỉnh và trả về view.
-    - Nhằm tối ưu trải nghiệm người dùng, sử dụng BMIRequest để render lại thông tin của người sử dụng.
+    - Nhằm tối ưu trải nghiệm người dùng, sử dụng BMIRequest để render lại thông tin của người sử dụng, nếu result không phải là null thì sẽ render ra ảnh phân loại và nút back.
 ![img_1.png](img_1.png)
 
 3. Lưu ý
