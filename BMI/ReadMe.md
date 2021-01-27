@@ -22,9 +22,12 @@ Project để mặc định chạy ở http://localhost:8080. Sau khi tiếp nh�
     2.2. Submit form
     - Controller biding dữ liệu với BMIRequest và xử lý truyển dữ liệu vào một BMI. 
     - Gọi BMIServiceImpl tính toán bmiIndex và trả về model BMI hoàn chỉnh và trả về view.
-    - Nhằm tối ưu trải nghiệm người dùng, sử dụng BMIRequest để render lại thông tin của người sử dụng, nếu result không phải là null thì sẽ render ra ảnh phân loại và nút back.
+    - Nhằm tối ưu trải nghiệm người dùng, sử dụng BMIRequest để render lại thông tin của người sử dụng, nếu result không 
+      phải là null thì sẽ render ra ảnh phân loại và nút back.
 ![img_1.png](img_1.png)
 
 3. Lưu ý
-   - Cấu trúc vẫn thể hiện sự phụ thuộc của service vào BMI. Để giải quết thì ta có thể tạo 1 Interface là Index và để BMI implements Index. Trong service sẽ dùng Index để giảm sự phụ thuộc.
-   - Trong controller code chưa refactor, nên xây dựng riêng 1 method covert từ BMIRequest sang BMI.
+   - Cấu trúc vẫn thể hiện sự phụ thuộc của service vào BMI. Để giải quyết thì ta có thể tạo 1 Interface là Index và để
+     BMI implements Index. Trong service sẽ dùng Index để giảm sự phụ thuộc.
+     
+   - Đã tạo thêm lớp BMIMapper để covert từ BMIRequest sang BMI;

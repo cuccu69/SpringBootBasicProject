@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Model.BMI;
+import com.example.demo.Model.BMIMapper;
 import com.example.demo.Model.BMIRequest;
 import com.example.demo.Service.BMIService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,8 @@ public class BMIController {
     @PostMapping("/result")
     public String caculateBMI(BMIRequest request, Model model) {
         BMI myBMI = new BMI();
-        myBMI.setAge(request.getAge());
-        myBMI.setHeight(request.getHeight());
-        myBMI.setName(request.getName());
-        myBMI.setWeight(request.getWeight());
+        BMIMapper.convertRequestToBmi(request);
         myBMI.setBmiIndex(bmiService.caculateIndex(myBMI));
-
 
         model.addAttribute("bmiRequest", request);
         model.addAttribute("bmi", String.valueOf(myBMI.getBmiIndex()));
