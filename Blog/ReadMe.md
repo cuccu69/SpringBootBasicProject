@@ -30,3 +30,8 @@ Controller sử dụng nhiều @PathVariable để thuận tiện cho việc l�
 - HomeController: bắt request và view trang chủ tại http://localhost:8080/
 - CommentController: xử lý post quest lưu comment
 - PostController: xử lý các request liên quan đến thêm, sửa, xóa.
+
+##3.Lưu ý
+Bài thực hành chưa có đăng nhập nên việc tạo email để đăng bài là chưa cần thiết. Có thể bỏ User các phần liên quan. Nếu để thì hãy tạo một vài email sẵn trong database để có thể up post.
+
+Chưa biết việc sử dụng lấy dữ liệu từ đường đãn có ảnh hưởng nhiều đến bảo mật hay không.
