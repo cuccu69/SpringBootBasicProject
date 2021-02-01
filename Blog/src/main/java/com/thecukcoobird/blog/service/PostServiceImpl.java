@@ -22,4 +22,8 @@ public class PostServiceImpl implements IPostService{
     public Optional<Post> findPostById(int id){
         return postRepo.findById(id);
     }
+    public void deletePost(int postId){
+        Post post = postRepo.findById(postId).get();
+        postRepo.delete(post);
+    }
 }
