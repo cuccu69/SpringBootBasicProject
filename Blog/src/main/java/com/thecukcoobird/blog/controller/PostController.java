@@ -5,7 +5,6 @@ import com.thecukcoobird.blog.model.Post;
 import com.thecukcoobird.blog.model.User;
 import com.thecukcoobird.blog.model.exception.NotFoundException;
 import com.thecukcoobird.blog.controller.request.PostRequest;
-import com.thecukcoobird.blog.repository.PostRepository;
 import com.thecukcoobird.blog.service.PostServiceImpl;
 import com.thecukcoobird.blog.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +24,7 @@ public class PostController {
     @GetMapping("/addpost")
     public String addPost(Model model){
         model.addAttribute("postRequest", new PostRequest());
+        model.addAttribute("user", "check");
 
         return Route.ADD_POST;
     }
@@ -41,7 +41,10 @@ public class PostController {
             postService.savePost(newPost);
             return "redirect:/";
         } else {
-            throw new NotFoundException("email doesn't exit");
+//            throw new NotFoundException("email doesn't exit");
+            model.addAttribute("postRequest", postRequest);
+            model.addAttribute("user", null);
+            return Route.ADD_POST;
 //            return "redirect:/";
         }
     }

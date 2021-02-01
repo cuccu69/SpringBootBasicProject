@@ -13,5 +13,9 @@
         <input type="text" th:field="*{content}" placeholder="Content" width="400" height="300">
         <input type="submit">
     </form>
+
+    <div th:if="${user} == null">
+        <p>Wrong email</p>
+    </div>
 </body>
 </html>
