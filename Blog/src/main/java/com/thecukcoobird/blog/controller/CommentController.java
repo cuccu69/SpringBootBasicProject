@@ -1,7 +1,7 @@
-package com.thecukcoobird.blog.controller.request;
+package com.thecukcoobird.blog.controller;
 
 import com.thecukcoobird.blog.model.Comment;
-import com.thecukcoobird.blog.model.DTO.CommentDTO;
+import com.thecukcoobird.blog.controller.request.CommentDTO;
 import com.thecukcoobird.blog.model.Post;
 import com.thecukcoobird.blog.service.CommentServiceImpl;
 import com.thecukcoobird.blog.service.PostServiceImpl;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class CommentController {

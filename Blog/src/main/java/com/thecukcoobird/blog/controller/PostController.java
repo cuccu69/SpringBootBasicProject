@@ -1,10 +1,11 @@
 package com.thecukcoobird.blog.controller;
 
-import com.thecukcoobird.blog.model.DTO.CommentDTO;
+import com.thecukcoobird.blog.controller.request.CommentDTO;
 import com.thecukcoobird.blog.model.Post;
 import com.thecukcoobird.blog.model.User;
 import com.thecukcoobird.blog.model.exception.NotFoundException;
 import com.thecukcoobird.blog.controller.request.PostRequest;
+import com.thecukcoobird.blog.repository.PostRepository;
 import com.thecukcoobird.blog.service.PostServiceImpl;
 import com.thecukcoobird.blog.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,5 +67,24 @@ public class PostController {
     public String deletePost(@PathVariable(name = "id") int postId){
         postService.deletePost(postId);
         return "redirect:/";
+    }
+
+    @GetMapping("/post/{id}/edit")
+    public String viewEdit(@PathVariable(name = "id")  int postId, Model model){
+        PostRequest postRequest = new PostRequest();
+        postRequest.setPostId(postId);
+
+        model.addAttribute("postRequest", postRequest);
+        return "edit_post";
+    }
+    @PostMapping("/post/edit")
+    public String editPost(@ModelAttribute PostRequest postRequest, Model model){
+        Post post = postService.findPostById(postRequest.getPostId()).get();
+        post.setContent(postRequest.getContent());
+        post.setTitle(postRequest.getTitle());
+
+        postService.updatePost();
+
+        return "redirect:/post/" + postRequest.getPostId();
     }
 }

@@ -12,6 +12,7 @@ public class PostRequest {
     private String title;
     private String content;
     private String email;
+    private int postId;
 
     public Post coverPostRequestToPost(Post post){
         post.setTitle(this.getTitle());

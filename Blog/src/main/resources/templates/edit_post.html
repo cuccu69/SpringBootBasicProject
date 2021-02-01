@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit post</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/post/edit}" th:object="${postRequest}" method="post">
+    <p>Title</p><input type="text" th:field="*{title}" placeholder="title">
+    <p>Content</p><input type="text" th:field="*{content}" placeholder="content">
+    <input type="hidden" th:field="*{postId}">
+    <input type="submit">
+</form>
+
+</body>
+</html>

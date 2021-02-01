@@ -26,4 +26,7 @@ public class PostServiceImpl implements IPostService{
         Post post = postRepo.findById(postId).get();
         postRepo.delete(post);
     }
+    public void updatePost(){
+        postRepo.flush();
+    }
 }

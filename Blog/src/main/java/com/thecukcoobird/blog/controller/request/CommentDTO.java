@@ -1,4 +1,4 @@
-package com.thecukcoobird.blog.model.DTO;
+package com.thecukcoobird.blog.controller.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
