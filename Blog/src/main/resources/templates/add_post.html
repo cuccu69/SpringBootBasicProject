@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new post</title>
+</head>
+<body>
+    <h3>Please fill in the form below:</h3>
+    <form action="#" th:action="@{/post/save}" th:object="${postRequest}" method="post">
+        <input type="text" th:field="*{email}" placeholder="Your email" width="400">
+        <input type="text" th:field="*{title}" placeholder="Title" width="400">
+        <input type="text" th:field="*{content}" placeholder="Content" width="400" height="300">
+        <input type="submit">
+    </form>
+</body>
+</html>

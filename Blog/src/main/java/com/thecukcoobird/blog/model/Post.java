@@ -19,7 +19,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, length = 64)
+    @Column(nullable = false)
     private String title;
 
     @Column(nullable = false)
@@ -38,17 +38,17 @@ public class Post {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User Author;
+    private User author;
 
     private LocalDateTime createTime;
     @PrePersist
     public void prePersist(){
         createTime = LocalDateTime.now();
     }
-    @PreUpdate
-    public void preUpdate(){
-        modified = true;
-    }
-
-    private boolean modified = false;
+//    @PreUpdate
+//    public void preUpdate(){
+//        modified = true;
+//    }
+//
+//    private boolean modified = false;
 }

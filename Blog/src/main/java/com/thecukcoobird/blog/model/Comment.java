@@ -32,10 +32,4 @@ public class Comment {
     public void prePersist(){
         createTime = LocalDateTime.now();
     }
-    @PreUpdate
-    public void preUpdate(){
-        modified = true;
-    }
-
-    private boolean modified = false;
 }

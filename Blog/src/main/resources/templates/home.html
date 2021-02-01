@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page blog</title>
+    <style>
+        body {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            border: solid 1px black;
+            padding: 5px 30px;
+            width: 350px;
+            margin: 20px 30px;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: large;
+            margin-bottom: 0px;
+        }
+
+        .author {
+            font-size: small;
+            text-align: center;
+            margin: 0px;
+        }
+
+        .content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    </style>
+</head>
+<body>
+<div class="navigation">
+    <h1>Wellcome to the blog</h1>
+    <p><a href="/addpost">Add new post</a></p>
+</div>
+<p>We hope you find your favorite posts here</p>
+<div class="card-container">
+    <div th:each="post: ${allPosts}" class="card">
+        <p th:text="${post.title}" class="title"></p>
+        <p th:text="'Author: ' + ${post.author.getFullName()}" class="author"></p>
+        <p th:text="${post.content}" class="content"></p>
+        <a th:href="@{/post/{id}(id=${post.id})}">Read more</a>
+    </div>
+</div>
+</body>
+</html>

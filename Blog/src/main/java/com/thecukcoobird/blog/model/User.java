@@ -30,9 +30,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date birthDay;
+//    @Column(nullable = false)
+//    @Temporal(TemporalType.DATE) //cho nay bao ko the de @Temporal cho loai Date hay Calender
+//    private Date birthDay;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${post.title}"></title>
+    <style>
+        body {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            text-align: center;
+            font-size: x-large;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="navigation">
+    <h1><a href="/">Wellcome to the blog</a></h1>
+    <p><a href="/addpost">Add new post</a></p>
+</div>
+
+<div class="card-container">
+    <p th:text="${post.title}" class="title"></p>
+    <p th:text="${post.content}" class="content"></p>
+</div>
+
+<br><br><br>
+
+<div>
+    <p style="font-weight:bold;">Comment:</p>
+    <div>
+        <div th:each="comment: ${comments}">
+            <p th:text="${comment.content}"></p>
+        </div>
+    </div>
+    <p>What do you think. Let comment here:</p>
+    <form action="#" th:action="@{/comment/save}" th:object="${commentRequest}" method="post">
+        <input type="text" th:field="*{content}" placeholder="What do you think">
+        <input type="hidden" th:field="*{postId}">
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

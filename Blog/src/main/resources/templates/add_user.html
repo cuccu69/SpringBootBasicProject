@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new user</title>
+</head>
+<body>
+<h3>Please fill in the form below:</h3>
+<form action="#" th:action="@{/post/save}" th:object="${userRequest}" method="post">
+    <input type="text" th:field="*{fullName}" placeholder="Your email" width="400">
+    <input type="text" th:field="*{email}" placeholder="Title" width="400">
+    <input type="text" th:field="*{password}" placeholder="Content" width="400" height="300">
+    <input type="submit">
+</form>
+</body>
+</html>
