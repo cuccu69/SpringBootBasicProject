@@ -6,17 +6,19 @@ Mục tiêu của project nhằm thực hiện một số thao tác cơ bản v�
 
 Project sẽ có trang chủ hiển thị tất cả các bài viết. Tại đây ta có thể view chi tiết bài viết và tạo bài viết mới
 ![img.png](img.png)
+
 Để tạo bài viết email sẽ bắt buộc thuộc email đã được cấu hình sẵn trong database. Nếu sai sẽ báo lỗi, đúng sẽ quay về trang chủ.
 ![img_1.png](img_1.png)
+
 Bên trong post ta có thể thực hiện comment, edit hoặc xóa bài viết.
 ![img_2.png](img_2.png)
 
 ##2.Chi tiết
 
 ###2.1 Cấu hình kết nối với mySQL
-    spring.datasource.url=jdbc:mysql://localhost:3306/*điền tên schema*?createDatabaseIfNotExist=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    spring.datasource.username=*điền username*
-    spring.datasource.password=*điền password*
+    spring.datasource.url=jdbc:mysql://localhost:3306/\*điền_tên_schema\*?createDatabaseIfNotExist=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    spring.datasource.username=\*điền_username\*
+    spring.datasource.password=\*điền_password\*
 
 ###2.2 Các model sử dụng
 - 3 entity: User, Post, Comment
