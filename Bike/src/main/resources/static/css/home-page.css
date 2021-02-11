@@ -126,7 +126,7 @@ a {
   flex-direction: column;
 }
 .cover-img-bigtext {
-  font-size: 400%;
+  font-size: 500%;
   font-family: "Satisfy";
   display: flex;
   align-items: center;
@@ -136,7 +136,7 @@ a {
 }
 .cover-img-smalltext {
   font-family: "Satisfy";
-  font-size: 150%;
+  font-size: 200%;
   display: flex;
   justify-content: center;
   text-shadow: 0px 0px 15px black;
@@ -202,13 +202,46 @@ a {
 }
 .container-why {
   position: relative;
+  /* background-image: url('../static/image/slider/why-chose.jpg'); */
+}
+.container-why2 {
+  position: absolute;
+  top: 10%;
+  width: 50%;
+  margin-left: 100px;
 }
 .why-content-container {
   position: absolute;
-  top: 50px;
+  top: 100px;
 }
 .content-title-img img{
   width: 50px;
   border-radius: 50%;
   overflow: hidden;
 }
+.why-content-p1 {
+  margin-bottom: 30px;
+}
+.why-content-p1 .content-title{
+  font-size: 350%;
+  font-family: 'Satisfy';
+  font-weight: 200%;
+}
+.why-content-p1 .content-content {
+  font-size: 110%;
+}
+
+.content-p2-card {
+  display: flex;
+  align-items: center;
+  /* border: solid 1px white; */
+}
+.content-title-img img{
+  margin: 30px 10px;
+}
+.content-title-bigtext {
+  font-size: 180%;
+  font-family: 'Satisfy';
+  font-weight: 200%;
+}
+/* ==============san pham noi bat============ */
