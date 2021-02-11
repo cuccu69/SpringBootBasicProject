@@ -146,6 +146,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 74%;
+  /* border: solid 1px black; */
+  margin: auto;
+  
 }
 .container-product-memu p{
   color: black;
@@ -181,7 +185,7 @@ a {
 .list-product-menu {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .product-menu-img {
   overflow: hidden;
@@ -245,3 +249,31 @@ a {
   font-weight: 200%;
 }
 /* ==============san pham noi bat============ */
+.container-standout p{
+  color: black;
+}
+.container-standout {
+  width: 74%;
+  margin: auto;
+  border: solid 1px black;
+}
+.standout-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.standout-card {
+  width: 22%;
+}
+.standout-title p{
+  text-align: center;
+  margin: 30px 0px;
+  font-family: 'Satisfy';
+  font-size: 250%;
+}
+.standout-card img {
+  width: 100%;
+}
+.standout-card-title {
+  text-align: center;
+}
